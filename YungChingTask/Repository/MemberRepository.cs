@@ -2,6 +2,7 @@
 using MySqlConnector;
 using YungChingTask.Models;
 using YungChingTask.Repository.Interface;
+using YungChingTask.Request;
 
 namespace YungChingTask.Repository;
 
@@ -26,6 +27,28 @@ public class MemberRepository(IServiceProvider provider) : IMemberRepository
             WHERE Id = @Id;
             """,
             model)) > 0;
+    }
+
+    public Task<IEnumerable<MemberModel>> List(ListMemberRequest request)
+    {
+        var sql =
+            """
+            SELECT * FROM member /**where**/ ;
+
+            """;
+        var whereConditions = new List<string> { };
+        if (request.Age > 0) whereConditions.Add("Age = @Age");
+        if (!string.IsNullOrEmpty(request.Name)) whereConditions.Add("Name = @Name");
+        if (!string.IsNullOrEmpty(request.Account)) whereConditions.Add("Account = @Account");
+        if(whereConditions.Count > 0)
+            sql = sql.Replace("/**where**/", "WHERE" + string.Join(" AND ", whereConditions));
+        return Sql(conn => conn.QueryAsync<MemberModel>(
+            sql, new
+            {
+                request.Age,
+                request.Name,
+                request.Account
+            }));
     }
 
     private TResult Sql<TResult>(Func<MySqlConnection, TResult> func)

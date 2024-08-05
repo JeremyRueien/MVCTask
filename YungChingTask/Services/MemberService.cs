@@ -2,6 +2,7 @@
 using YungChingTask.Models;
 using YungChingTask.Repository.Interface;
 using YungChingTask.Request;
+using YungChingTask.Response;
 using YungChingTask.Services.Interface;
 using HttpResponse = YungChingTask.Common.HttpResponse;
 
@@ -39,5 +40,11 @@ public class MemberService(IMemberRepository memberRepository) : IMemberService
         return result
             ? HttpResponse.Create().ToJson()
             : HttpResponse.Create("Failure").ToJson();
+    }
+
+    public async Task<IEnumerable<ListMemberResponse>> List(ListMemberRequest request)
+    {
+        var models = await memberRepository.List(request);
+        return models.Select(m => new ListMemberResponse(m));
     }
 }

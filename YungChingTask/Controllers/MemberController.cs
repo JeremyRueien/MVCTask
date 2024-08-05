@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using YungChingTask.Request;
+using YungChingTask.Response;
 using YungChingTask.Services.Interface;
 
 namespace YungChingTask.Controllers;
@@ -18,5 +19,11 @@ public class MemberController(IMemberService memberService) : ControllerBase
     public async Task<IActionResult> Update([FromBody] UpdateMemberRequest request)
     {
         return await memberService.Update(request);
+    }
+
+    [HttpPost("list")]
+    public async Task<IEnumerable<ListMemberResponse>> List([FromBody] ListMemberRequest request)
+    {
+        return await memberService.List(request);
     }
 }
