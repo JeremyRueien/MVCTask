@@ -13,4 +13,10 @@ public class MemberController(IMemberService memberService) : ControllerBase
     {
         return await memberService.Create(request);
     }
+
+    [HttpPost("update")]
+    public async Task<IActionResult> Update([FromBody] UpdateMemberRequest request)
+    {
+        return await memberService.Update(request);
+    }
 }

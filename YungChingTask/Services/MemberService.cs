@@ -23,4 +23,20 @@ public class MemberService(IMemberRepository memberRepository) : IMemberService
             ? HttpResponse.Create().ToJson() 
             : HttpResponse.Create("Failure").ToJson();
     }
+    public async Task<IActionResult> Update(UpdateMemberRequest request)
+    {
+        var updateModel = new MemberModel
+        {
+            Id = request.MemberId,
+            Account = request.Account,
+            Age = request.Age,
+            Name = request.Name,
+            Remark = request.Remark,
+            UpdateTime = DateTime.Now,
+        };
+        var result = await memberRepository.Update(updateModel);
+        return result
+            ? HttpResponse.Create().ToJson()
+            : HttpResponse.Create("Failure").ToJson();
+    }
 }

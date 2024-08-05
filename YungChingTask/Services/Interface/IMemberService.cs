@@ -6,4 +6,5 @@ namespace YungChingTask.Services.Interface;
 public interface IMemberService
 {
     Task<IActionResult> Create(CreateMemberRequest request);
+    Task<IActionResult> Update(UpdateMemberRequest request);
 }
