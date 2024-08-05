@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YungChingTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+635ae5c84c5b3130f1edb0da4dc5feef3fa87eea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c10bbcba895ff954c20ee1147100294055292923")]
 [assembly: System.Reflection.AssemblyProductAttribute("YungChingTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YungChingTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

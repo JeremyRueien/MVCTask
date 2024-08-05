@@ -40,3 +40,9 @@ C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\Microsoft.Extensio
 C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\Scrutor.dll
 C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\Dapper.dll
+C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\j3021\Desktop\MVCTask\YungChingTask\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

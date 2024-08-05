@@ -17,6 +17,7 @@ public class MemberService(IMemberRepository memberRepository) : IMemberService
             Age = request.Age,
             Name = request.Name,
             Remark = request.Remark,
+            CreateTime = DateTime.Now,
         };
         var result = await memberRepository.Create(insertModel);
         return result 

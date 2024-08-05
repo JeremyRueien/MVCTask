@@ -12,8 +12,8 @@ public class MemberRepository(IServiceProvider provider) : IMemberRepository
         return await Sql(conn => conn.ExecuteAsync(
             """
             INSERT INTO 
-            member (Name, Account, Age, Remark) 
-            VALUES (@Name, @Account, @Age, @Remark);
+            member (Name, Account, Age, Remark, CreateTime) 
+            VALUES (@Name, @Account, @Age, @Remark, @CreateTime);
             """,
             model)) > 0;
     }
@@ -22,8 +22,8 @@ public class MemberRepository(IServiceProvider provider) : IMemberRepository
         return await Sql(conn => conn.ExecuteAsync(
             """
             UPDATE member 
-            SET Name = @Name, Account = @Account, Age = @Age, Remark = @Remark, UpdateTime = UpdateTime
-            WHERE MemberId = @Id;
+            SET Name = @Name, Account = @Account, Age = @Age, Remark = @Remark, UpdateTime = @UpdateTime
+            WHERE Id = @Id;
             """,
             model)) > 0;
     }
