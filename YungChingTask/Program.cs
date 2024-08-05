@@ -1,12 +1,7 @@
-using YungChingTask.Application;
-using YungChingTask.Infrastructure;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var services = builder.Services;
-services.AddApplication()
-        .AddInfrastructure(builder.Configuration);
 
 
 builder.Services.AddControllers();

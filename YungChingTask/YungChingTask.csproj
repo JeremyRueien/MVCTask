@@ -7,18 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="MediatR" Version="12.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.7" />
     <PackageReference Include="MySqlConnector" Version="2.3.7" />
     <PackageReference Include="Scrutor" Version="4.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\Member\Command\" />
-    <Folder Include="Application\Member\Common\" />
-    <Folder Include="Application\Member\" />
-    <Folder Include="Application\Member\Queries\" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
 </Project>
