@@ -51,6 +51,19 @@ public class MemberRepository(IServiceProvider provider) : IMemberRepository
             }));
     }
 
+    public async Task<bool> Delete(int memberId)
+    {
+
+        return await Sql(conn => conn.ExecuteAsync(
+            """
+            DELETE FROM member 
+            WHERE Id = @memberId;
+            """,new
+            {
+                memberId
+            })) > 0;
+    }
+
     private TResult Sql<TResult>(Func<MySqlConnection, TResult> func)
     {
         MySqlConnection service = ServiceProviderServiceExtensions.GetService<MySqlConnection>(provider);

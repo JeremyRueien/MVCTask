@@ -9,4 +9,5 @@ public interface IMemberRepository
 
     Task<bool> Update(MemberModel model);
     Task<IEnumerable<MemberModel>> List(ListMemberRequest request);
+    Task<bool> Delete(int memberId);
 }

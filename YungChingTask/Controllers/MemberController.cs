@@ -26,4 +26,9 @@ public class MemberController(IMemberService memberService) : ControllerBase
     {
         return await memberService.List(request);
     }
+    [HttpPost("delete")]
+    public async Task<IActionResult> Delete([FromBody] DeleteMemberRequest request)
+    {
+        return await memberService.Delete(request);
+    }
 }

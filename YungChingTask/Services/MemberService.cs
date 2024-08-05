@@ -47,4 +47,11 @@ public class MemberService(IMemberRepository memberRepository) : IMemberService
         var models = await memberRepository.List(request);
         return models.Select(m => new ListMemberResponse(m));
     }
+    public async Task<IActionResult> Delete(DeleteMemberRequest request)
+    {
+        var result = await memberRepository.Delete(request.MemberId);
+        return result
+            ? HttpResponse.Create().ToJson()
+            : HttpResponse.Create("Failure").ToJson();
+    }
 }

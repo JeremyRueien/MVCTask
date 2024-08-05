@@ -9,4 +9,5 @@ public interface IMemberService
     Task<IActionResult> Create(CreateMemberRequest request);
     Task<IActionResult> Update(UpdateMemberRequest request);
     Task<IEnumerable<ListMemberResponse>> List(ListMemberRequest request);
+    Task<IActionResult> Delete(DeleteMemberRequest request);
 }
